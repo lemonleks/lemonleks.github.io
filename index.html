@@ -11,9 +11,16 @@
 <body class="p-4">
     <div class="flex gap-4">
         <video loop autoplay="true" muted src="./final_output_test.mp4"></video>
-        <pre class="text-[12px]">ffmpeg -stream_loop -1 -i watermark12_512_8pfs.mov -i test.mp4 -filter_complex
-            "[1:v]scale=iw:ih,setsar=1,format=yuv420p[v1];[0:v]scale=iw*0.2:-1,format=rgba[wm];[v1][wm]overlay=W-w-10:10:shortest=1:format=rgb:alpha=premultiplied"
-            -pix_fmt yuv420p -codec:a copy final_output_test.mp4</pre>
+        <div>
+            <pre class="text-[12px]">ffmpeg -stream_loop -1 -i watermark12_512_8pfs.mov -i test.mp4 -filter_complex
+                    "[1:v]scale=iw:ih,setsar=1,format=yuv420p[v1];[0:v]scale=iw*0.2:-1,format=rgba[wm];[v1][wm]overlay=W-w-10:10:shortest=1:format=rgb:alpha=premultiplied"
+                    -pix_fmt yuv420p -codec:a copy final_output_test.mp4</pre>
+
+            <div>
+                logo width 85px, video width 576px
+            </div>
+        </div>
+
     </div>
 </body>
 
